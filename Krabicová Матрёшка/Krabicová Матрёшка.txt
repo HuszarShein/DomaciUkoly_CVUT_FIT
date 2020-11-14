@@ -1,0 +1,12 @@
+Úkolem je vytvořit program, který dokáže pomoci rozhodnout, které krabice lze umístit do sebe.
+
+Předpokládáme otevírací papírové krabice tvaru kvádru. Krabice je dána svými vnějšími rozměry a b c. Tloušťka stěny je fixní 0.4 cm. Úkolem je pro zadanou dvojici krabic rozhodnout, zda je lze umístit do sebe a případně kolik nejvíce menších krabic lze umístit do větší krabice. Malé krabice můžeme při skládání otočit libovolným způsobem, ale všechny malé krabice musejí být otočené stejně.
+
+Vstupem programu jsou zadání dvou krabic. Každá krabice je zadaná svými vnějšími rozměry a b c. Rozměry jsou celá čísla, velikost je v centimetrech.
+
+Výstupem programu je rozhodnutí, zda lze krabice vložit do sebe a pokud ano, kolik menších krabic se vejde do větší krabice. Formát výstupu je zřejmý z ukázky níže. Za každou řádkou výpisu, tedy i za poslední řádkou, je odřádkování (\n).
+
+Program musí být schopen detekovat nesprávný vstup. Pokud je na vstupu nesmyslné zadání, program to zjistí, vypíše chybové hlášení a ukončí se. Formát chybového hlášení je uveden v ukázce níže. Pozor, za případným chybovým hlášením je odřádkování (\n). Chybové hlášení zasílejte na standardní výstup (printf), nezasílejte jej na chybový výstup. Za chybu je považováno:
+
+nečíselná hodnota nějakého rozměru,
+rozměr nulový nebo záporný.
