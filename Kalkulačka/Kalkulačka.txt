@@ -1,0 +1,16 @@
+Úkolem je vytvořit program, který bude zpracovávat jednoduché matematické vzorce.
+
+Na vstupu dostanete dvě desetinná čísla oddělená znakem operace a zakončená znakem rovná se. Vaším úkolem je vypočítat hodnotu podle zadaného operátoru:
+
+pro + určit součet,
+pro - určit rozdíl,
+pro * určit součin,
+pro / určit celočíselný podíl (např. 3.5 / 1.5 = 2, kolikrát se do dělence vejde celý dělitel).
+Jiné operace program nebude umět a vypíše pro ně chybové hlášení. Formát vstupu a výstupu je vidět níže na ukázce práce programu.
+
+Pokud je vstup neplatný, program to musí detekovat a zobrazit chybové hlášení. Chybové hlášení zobrazujte na standardní výstup (ne na chybový výstup). Za chybu považujte:
+
+zadané číslo není validní desetinné číslo,
+dělitel je 0 pro operaci /,
+čísla nejsou oddělena validním operátorem (+, -, * nebo /),
+za posledním číslem se nenachází znak =.
