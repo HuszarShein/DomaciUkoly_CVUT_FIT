@@ -1,0 +1,25 @@
+Úkolem je napsat program, který určí k-té bezčtvercové číslo.
+
+Přirozené číslo x je bezčtvercové, pokud není dělitelné druhou mocninou žádného celého čísla n ≥ 2. Například čísla 1, 2, 6 a 42 jsou příklady bezčtvercových celých čísel (prvočíselné rozklady jsou 1 = 1, 2 = 2, 6 = 2 * 3, 42 = 2 * 3 * 7). V žádném z rozkladů není druhá (ani vyšší) mocnina žádného faktoru. Naopak, čísla 4, 12, 27 a 98 jsou příklady čísel, která nejsou bezčtvercová (prvočíselné rozklady jsou 4 = 22, 12 = 22 * 3, 27 = 33 a 98 = 2 * 72), tedy v každém rozkladu je nejméně jeden faktor v alespoň druhé mocnině.
+
+Bezčtvercová čísla můžeme vypsat v pořadí dle velikosti. Dostaneme posloupnost:
+
+1, 2, 3, 5, 6, 7, 10, 11, 13, 14, 15, 17, 19, 21, 22, 23, 26, 29, 30, ...
+Program dostane na vstupu seznam celých čísel. Pro každé takové číslo k určí k-té bezčtvercové číslo v pořadí dle velikosti. Tedy očekávané výsledky jsou:
+
+k         výsledek
+1         1
+2         2
+3         3
+4         5
+5         6
+6         7
+7         10
+...
+Zadávání je ukončeno dosažením konce vstupu (EOF).
+Výstupem programu je hodnota bezčtvercového čísla na zadané k-té pozici v posloupnosti. Formát je zřejmý z ukázek běhu programu.
+
+Program musí být schopen detekovat nesprávný vstup. Pokud je na vstupu nesmyslné zadání, program to zjistí, vypíše chybové hlášení a ukončí se (tedy po nalezení první chyby již nezpracovává další případné intervaly na vstupu). Formát chybového hlášení je uveden v ukázce níže. Pozor, za případným chybovým hlášením je odřádkování (\n). Chybové hlášení zasílejte na standardní výstup (printf), nezasílejte jej na chybový výstup. Za chybu je považováno:
+
+nečíselná hodnota pořadí,
+pořadí není přirozené číslo (je menší než 1).
