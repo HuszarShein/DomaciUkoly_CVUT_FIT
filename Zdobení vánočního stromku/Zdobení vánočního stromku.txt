@@ -1,0 +1,34 @@
+Úkolem je vytvořit sadu funkcí, které pomohou při zdobení vánočního stromečku.
+
+Blíží se Vánoce a k tomu patří i zdobení vánočního stromku. Zdobení stromku je náročná činnost, je potřeba experimentovat s ozdobami, zda se k sobě hodí. Při experimentování je ale vhodné dbát i na bezpečnost a zajistit, aby ozdobený stromek např. nevzplanul. K ohlídání bezpečného zdobení stromku pomůže sada funkcí, kterou máte za úkol implementovat v tomto příkladu.
+
+Vánoční stromek budeme pro jednoduchost modelovat jako ternární nelineární spojovou strukturu (každý uzel má nejvýše tři následníky). Uzly reprezentují rozvětvování našeho stromu. Do uzlů můžeme umístit ozdoby (dekorace). Dekoracemi jsou svíčky (candles) a prskavky (sparkler).
+
+Uzel stromu reprezentuje struktura TNODE níže. Celý strom je pak reprezentován ukazatelem na kořenový uzel. Vlastní práce se stromem bude probíhat pomocí funkcí:
+
+int setDecoration ( TNODE ** root, const char * path, int decor );
+Funkce modeluje (vytváří) strom a umisťuje na něj ozdoby. Parametry jsou:
+root (inout), ukazatel na kořen stromu,
+ASCIIZ řetězec popisující cestu od kořene k umístění ozdoby (viz dále) a
+typ dekorace umístěné do cílového uzlu.
+Funkce začne procházet strom od kořene. Jak prochází mezilehlými uzly, postupně pokračuje větvemi 0 až 2 podle čísel '0' až '2', která zleva doprava čte v zadané cestě. V cílovém uzlu funkce nastaví požadovanou ozdobu (pokud tam již nějaká ozdoba byla, bude nahrazena). Pokud nějaký uzel na požadované cestě neexistuje, funkce mezilehlé uzly vytvoří (modeluje stromek). V takto vytvořených mezilehlých uzlech bude nastavena ozdoba na hodnotu DECORATION_NONE. Pozor, funkce vytváří pouze potřebné uzly, žádné další navíc. Pokud funkce uspěje, vrátí hodnotu 1. Pokud funkce selže (zadaná cesta obsahuje znaky jiné než '0' až '2', funkce na stromě nic nezmění a vrátí hodnotu 0.
+int cutBranch ( TNODE ** root, const char * path );
+Funkce slouží k odstranění části (nebo celého) stromu, včetně všech napojených větví a ozdob. Funkce má parametry:
+root (inout), ukazatel na kořen stromu a
+ASCIIZ řetězec popisující cestu od kořene k uzlu, který má být odstraněn (tento uzel a všechny jeho následníci budou ze stromu odříznuty).
+Funkce hledá uzel k odříznutí podle stejných pravidel, jako je tomu u přidávání. Pokud funkce uspěje (cesta je platná a odstraňovaný uzel existuje), bude vrácena hodnota 1. Pokud funkce selže (nesprávná cesta nebo takto identifikovaný uzel neexistuje), funkce nebude nic na struktuře stromu měnit a vrátí hodnotu 0. Speciálně, pokud je cesta zadaná jako prázdný řetězec, tato funkce vymaže celý strom.
+int easyToCatchFire ( TNODE * root );
+Funkce vyhodnotí, zda je ozdobený stromek náchylný ke vzplanutí. Pokud jsou někde ve stromu vedle sebe svíčka a prskavka, stromek snadno vzplane. Pod pojmem vedle sebe se rozumí umístění ve vztahu rodičovský uzel/synovský uzel nebo bezprostřední bratři.
+void destroyTree ( TNODE * root );
+Funkce uvolní prostředky, které byly alokované pro implementaci stromu. Testovací prostředí tuto funkci zavolá vždy po skončení testování každého vytvořeného stromu.
+TNODE
+struktura popisuje jeden uzel stromu. Složky jsou:
+m_Decoration - udává ozdobu v daném uzlu stromu,
+m_Parent - udává odkaz na rodiče ve stromu (NULL pro kořenový uzel),
+m_Branches - udává odkaz na potomky ve stromu (NULL pro indikaci, že potomek neexistuje).
+Označení uzlů ve stromu je zachyceno na následujícím obrázku :
+
+cesty ve stromu
+Odevzdávejte zdrojový kód, který obsahuje Vaši implementaci požadovaných funkcí. Do odevzdávaného souboru samozřejmě patří ještě další Vaše podpůrné funkce, které jsou z požadovaného rozhraní volané. Naopak, v odevzdávaném souboru nesmí být vkládání hlavičkových souborů a funkce main (pokud vkládání hlavičkových souborů a funkci main zabalíte do bloku podmíněného překladu, mohou zůstat). Za základ řešení použijte zdrojový kód z přílohy. Zdrojový kód si zkopírujte a doplňte pouze implementaci požadovaných funkcí (případně dalších Vašich funkcí). Pokud zachováte bloky podmíněného překladu, můžete takový soubor odevzdávat Progtestu.
+
+Úloha není náročná na paměť ani na dobu běhu. Je náročnější na správnou práci s ukazateli, navíc ve stromové struktuře. Pro některé operace je vhodné použít rekurzi (mazání). Testovací prostředí kontroluje skutečnou strukturu Vámi vytvořeného stromu. Pokud se tvar stromu neshoduje (nějaké uzly chybí nebo přebývají), je to vyhodnoceno jako chyba.
