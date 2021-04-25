@@ -1,0 +1,14 @@
+Úkolem je vytvořit program, který bude řešit logickou hru - odebírání žetonů.
+
+Hru hrají dva hráči A a B. Na stole je v řade umístěno 1 až 100 žetonů. Každý žeton má na sobě napsanou hodnotu, hodnota je celé číslo (kladná, nulová nebo záporná). Hráči se střídají, začíná hráč A. Hráč na tahu si může vzít dle své volby 1 až 2 žetony. Žetony lze odebírat pouze ze začátku nebo z konce řady. Pokud hráč odebírá dva žetony ze stejného konce řady, je nutné nejprve odebrat žeton krajní a teprve pak žeton takto zpřístupněný. Hra končí v okamžiku, kdy jeden z hráčů odebere poslední žeton. Vyhrává ten hráč, který získal větší součet hodnot svých žetonů.
+
+Předpokládáme, že oba hráči hrají absolutně efektivně. Tedy každý z hráčů odebírá žetony tak, aby získal co nejvyšší součet svých žetonů. Úkolem je nalézt posloupnost těchto efektivních tahů a určit, kdo vyhraje.
+
+Vstupem programu je posloupnost celých čísel. Tato čísla představují hodnoty žetonů tak, jak jsou vedle sebe na stole. Při odebírání se na žetony odkazujeme jejich indexem (0 až počet-1).
+
+Výstupem programu je nalezená posloupnost tahů jednotlivých hráčů. Každý tah je na samostatné řádce. Tahy jsou vždy uvozené identifikací hráče (A nebo B, střídají se) následuje indexem odebraného žetonu (index může být jeden nebo dva podle počtu odebíraných žetonů) a končí hodnotou (hodnotami) odebíraných žetonů, hodnoty žetonů jsou v závorce. Poslední řádkou výstupu je informace o součtech žetonů obou hráčů.
+
+Pokud je vstup neplatný, program to musí detekovat a zobrazit chybové hlášení. Chybové hlášení zobrazujte na standardní výstup (ne na chybový výstup). Po detekování chyby se program ukončí. Za chybu považujte:
+
+byla zadaná prázdná posloupnost žetonů nebo žetonů bylo více než 100,
+hodnota žetonu není celé číslo.
